@@ -107,7 +107,7 @@ namespace SsisBuild.Core.Tests
 
             foreach (var parameter in parameters.Where(p=>p.Value.Sensitive))
             {
-                Assert.True(passedParameters.Any(pp => pp.Name == parameter.Key && pp.Value == parameter.Value.Value && pp.DataType == parameter.Value.ParameterDataType));
+                Assert.Contains(passedParameters, pp => pp.Name == parameter.Key && pp.Value == parameter.Value.Value && pp.DataType == parameter.Value.ParameterDataType);
             }
         }
 

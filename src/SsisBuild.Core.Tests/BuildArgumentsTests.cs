@@ -80,7 +80,7 @@ namespace SsisBuild.Core.Tests
             // Assert
             Assert.NotNull(exception);
             Assert.IsType<MissingRequiredArgumentException>(exception);
-            Assert.Equal(((MissingRequiredArgumentException) exception).MissingArgument, nameof(BuildArguments.Configuration));
+            Assert.Equal(nameof(BuildArguments.Configuration), ((MissingRequiredArgumentException) exception).MissingArgument);
         }
 
         [Theory]

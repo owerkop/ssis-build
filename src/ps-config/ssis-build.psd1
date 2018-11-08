@@ -10,4 +10,36 @@
          ApiKey = "creat10n"
       }
    );
+   Dev = @(
+      @{
+         Testing = @(
+            @{
+                RunTimeOut = 0
+                TestTimeOut = 0
+            }
+         )
+       }
+   );
+   CI = @(
+      @{
+         Testing = @(
+            @{
+                RunTimeOut = 0
+                TestTimeOut = 0
+            }
+         )
+       }
+   );
+   QA = @(
+      @{
+         Testing = @(
+            @{
+                RunTimeOut = 0
+                TestTimeOut = 0
+            }
+         )
+       }
+   );
+   Live = @(
+   );
 }

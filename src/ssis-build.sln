@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2050
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SsisBuild", "SsisBuild\SsisBuild.csproj", "{8B1B1E18-1BA7-4593-AFE2-76064BD213C4}"
 EndProject
@@ -25,6 +25,11 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SsisDeploy.Tests", "SsisDeploy.Tests\SsisDeploy.Tests.csproj", "{24D99EAB-D2A3-444E-828B-A35B6E04C488}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SsisBuild.Tests.Helpers", "SsisBuild.Tests.Helpers\SsisBuild.Tests.Helpers.csproj", "{17AFE8AD-F52E-44E5-B0F6-1B24F17EDB1B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ps-config", "ps-config", "{52E3901B-E9EE-474B-85BA-28A9F8A295CF}"
+	ProjectSection(SolutionItems) = preProject
+		ps-config\ssis-build.psd1 = ps-config\ssis-build.psd1
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -71,5 +76,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {297A2F0E-CD53-4E50-8E42-5CEE16CBAE6A}
 	EndGlobalSection
 EndGlobal

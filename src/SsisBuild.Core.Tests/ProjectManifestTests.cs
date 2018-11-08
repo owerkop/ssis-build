@@ -62,7 +62,7 @@ namespace SsisBuild.Core.Tests
 
             foreach (var package in packages)
             {
-                Assert.True(projectManifest.PackageNames.Contains(package));
+                Assert.Contains(package, projectManifest.PackageNames);
                 foreach (var parameterSetupData in parameters)
                 {
                     var fullName = $"{package}::{parameterSetupData.Name}";
@@ -75,7 +75,7 @@ namespace SsisBuild.Core.Tests
 
             foreach (var connectionManager in connectionManagers)
             {
-                Assert.True(projectManifest.ConnectionManagerNames.Contains(connectionManager));
+                Assert.Contains(connectionManager, projectManifest.ConnectionManagerNames);
             }
 
             Assert.Equal(versionMajor, projectManifest.VersionMajor);
@@ -136,7 +136,7 @@ namespace SsisBuild.Core.Tests
             Assert.Equal(desiredProtectionLevel, projectManifest.ProtectionLevel);
         }
 
-        [Theory]
+        [Theory(Skip = "Obsolete")]
         [InlineData(ProtectionLevel.EncryptAllWithUserKey)]
         [InlineData(ProtectionLevel.EncryptSensitiveWithUserKey)]
         [Obsolete]
@@ -177,7 +177,7 @@ namespace SsisBuild.Core.Tests
             // Assert
             Assert.NotNull(exception);
             Assert.IsType<InvalidXmlException>(exception);
-            Assert.True(exception.Message.Contains("Major"));
+            Assert.Contains("Major", exception.Message);
         }
 
         [Fact]
@@ -200,7 +200,7 @@ namespace SsisBuild.Core.Tests
             // Assert
             Assert.NotNull(exception);
             Assert.IsType<InvalidXmlException>(exception);
-            Assert.True(exception.Message.Contains("Minor"));
+            Assert.Contains("Minor", exception.Message);
         }
 
         [Fact]
@@ -223,7 +223,7 @@ namespace SsisBuild.Core.Tests
             // Assert
             Assert.NotNull(exception);
             Assert.IsType<InvalidXmlException>(exception);
-            Assert.True(exception.Message.Contains("Build"));
+            Assert.Contains("Build", exception.Message);
         }
 
 
@@ -248,7 +248,7 @@ namespace SsisBuild.Core.Tests
             // Assert
             Assert.NotNull(exception);
             Assert.IsType<InvalidXmlException>(exception);
-            Assert.True(exception.Message.Contains("Major"));
+            Assert.Contains("Major", exception.Message);
         }
 
         [Fact]
@@ -272,7 +272,7 @@ namespace SsisBuild.Core.Tests
             // Assert
             Assert.NotNull(exception);
             Assert.IsType<InvalidXmlException>(exception);
-            Assert.True(exception.Message.Contains("Minor"));
+            Assert.Contains("Minor", exception.Message);
         }
 
         [Fact]
@@ -296,7 +296,7 @@ namespace SsisBuild.Core.Tests
             // Assert
             Assert.NotNull(exception);
             Assert.IsType<InvalidXmlException>(exception);
-            Assert.True(exception.Message.Contains("Build"));
+            Assert.Contains("Build", exception.Message);
         }
 
         [Fact]
@@ -319,7 +319,7 @@ namespace SsisBuild.Core.Tests
             // Assert
             Assert.NotNull(exception);
             Assert.IsType<InvalidXmlException>(exception);
-            Assert.True(exception.Message.Contains("Comments"));
+            Assert.Contains("Comments", exception.Message);
         }
 
         [Fact]
@@ -342,7 +342,7 @@ namespace SsisBuild.Core.Tests
             // Assert
             Assert.NotNull(exception);
             Assert.IsType<InvalidXmlException>(exception);
-            Assert.True(exception.Message.Contains("Description"));
+            Assert.Contains("Description", exception.Message);
         }
 
         [Theory, MemberData(nameof(ParameterData))]
@@ -449,7 +449,7 @@ namespace SsisBuild.Core.Tests
             // Assert
             Assert.NotNull(exception);
             Assert.IsType<InvalidXmlException>(exception);
-            Assert.True(exception.Message.Contains("SSIS:ProtectionLevel"));
+            Assert.Contains("SSIS:ProtectionLevel", exception.Message);
         }
 
         [Theory, MemberData(nameof(ParameterData))]
@@ -471,11 +471,11 @@ namespace SsisBuild.Core.Tests
             // Assert
             Assert.NotNull(exception);
             Assert.IsType<InvalidXmlException>(exception);
-            Assert.True(exception.Message.Contains("Invalid Protection Level"));
+            Assert.Contains("Invalid Protection Level", exception.Message);
         }
 
 
-        internal static IEnumerable<object[]> ParameterData()
+        public static IEnumerable<object[]> ParameterData()
         {
             var protectionLevels = new[] {ProtectionLevel.DontSaveSensitive, ProtectionLevel.EncryptSensitiveWithPassword, ProtectionLevel.EncryptAllWithPassword};
 

@@ -62,7 +62,7 @@ namespace SsisBuild.Core.Tests
             foreach (var parameter in parameters)
             {
                 Assert.True(config.Parameters.ContainsKey(parameter.Key));
-                Assert.Equal(null, config.Parameters[parameter.Key].Value);
+                Assert.Null(config.Parameters[parameter.Key].Value);
             }
 
         }

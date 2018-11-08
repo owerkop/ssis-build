@@ -45,7 +45,7 @@ namespace SsisBuild.Logger.Tests
             }
 
             // Assert
-            Assert.True(consoleOutput.ToString().Contains(message));
+            Assert.Contains(message, consoleOutput.ToString());
         }
 
         [Fact]
@@ -70,7 +70,7 @@ namespace SsisBuild.Logger.Tests
             }
 
             // Assert
-            Assert.True(consoleOutput.ToString().Contains(message));
+            Assert.Contains(message, consoleOutput.ToString());
         }
 
         [Fact]
@@ -95,7 +95,7 @@ namespace SsisBuild.Logger.Tests
             }
 
             // Assert
-            Assert.True(consoleOutput.ToString().Contains(message));
+            Assert.Contains(message, consoleOutput.ToString());
         }
     }
 }

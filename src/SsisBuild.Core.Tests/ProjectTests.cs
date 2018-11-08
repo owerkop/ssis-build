@@ -109,7 +109,7 @@ namespace SsisBuild.Core.Tests
             // Assert
             Assert.NotNull(exception);
             Assert.IsType<InvalidXmlException>(exception);
-            Assert.True(exception.Message.Contains("Manifest"));
+            Assert.Contains("Manifest", exception.Message);
         }
 
         [Fact]

@@ -68,7 +68,7 @@ namespace SsisBuild.Core.Tests
             Assert.IsType<InvalidXmlException>(exception);
         }
 
-        [Fact]
+        [Fact(Skip = "Obsolete")]
         [Obsolete]
         public void Fail_NoProtectionLevel()
         {
@@ -262,7 +262,7 @@ namespace SsisBuild.Core.Tests
             // Assert
             Assert.NotNull(exception);
             Assert.IsType<InvalidXmlException>(exception);
-            Assert.True(exception.Message.Contains("\"IV\""));
+            Assert.Contains("\"IV\"", exception.Message);
         }
 
         [Fact]
@@ -316,7 +316,7 @@ namespace SsisBuild.Core.Tests
             // Assert
             Assert.NotNull(exception);
             Assert.IsType<InvalidXmlException>(exception);
-            Assert.True(exception.Message.Contains("\"IV\""));
+            Assert.Contains("\"IV\"", exception.Message);
         }
 
         [Fact]
@@ -370,7 +370,7 @@ namespace SsisBuild.Core.Tests
             // Assert
             Assert.NotNull(exception);
             Assert.IsType<InvalidXmlException>(exception);
-            Assert.True(exception.Message.Contains("\"Salt\""));
+            Assert.Contains("\"Salt\"", exception.Message);
         }
 
         [Fact]
@@ -424,7 +424,7 @@ namespace SsisBuild.Core.Tests
             // Assert
             Assert.NotNull(exception);
             Assert.IsType<InvalidXmlException>(exception);
-            Assert.True(exception.Message.Contains("\"Salt\""));
+            Assert.Contains("\"Salt\"", exception.Message);
         }
 
         public void Dispose()

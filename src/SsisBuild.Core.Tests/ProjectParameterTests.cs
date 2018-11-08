@@ -95,7 +95,7 @@ namespace SsisBuild.Core.Tests
 
             // Assert
             Assert.NotNull(parameter);
-            Assert.Equal(null, parameter.ParameterDataType?.Name);
+            Assert.Null(parameter.ParameterDataType?.Name);
         }
 
         [Fact]

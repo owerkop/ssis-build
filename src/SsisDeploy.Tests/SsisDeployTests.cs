@@ -88,7 +88,7 @@ namespace SsisDeploy.Tests
             // Assert
             Assert.NotNull(exception);
             Assert.IsType<InvalidTokenException>(exception);
-            Assert.True(consoleOutput.ToString().ToLowerInvariant().Contains("usage"));
+            Assert.Contains("usage", consoleOutput.ToString().ToLowerInvariant());
         }
 
         [Fact]
@@ -114,7 +114,7 @@ namespace SsisDeploy.Tests
             // Assert
             Assert.NotNull(exception);
             Assert.IsType<InvalidTokenException>(exception);
-            Assert.True(consoleOutput.ToString().ToLowerInvariant().Contains("usage"));
+            Assert.Contains("usage", consoleOutput.ToString().ToLowerInvariant());
         }
 
         [Fact]
@@ -138,8 +138,8 @@ namespace SsisDeploy.Tests
             // Assert
             Assert.NotNull(exception);
             Assert.IsType<MissingRequiredArgumentException>(exception);
-            Assert.True(consoleOutput.ToString().Contains(new MissingRequiredArgumentException(nameof(DeployArguments.ServerInstance)).Message));
-            Assert.True(consoleOutput.ToString().ToLowerInvariant().Contains("usage"));
+            Assert.Contains(new MissingRequiredArgumentException(nameof(DeployArguments.ServerInstance)).Message, consoleOutput.ToString());
+            Assert.Contains("usage", consoleOutput.ToString().ToLowerInvariant());
         }
 
         [Fact]

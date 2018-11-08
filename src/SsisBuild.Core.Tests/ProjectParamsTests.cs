@@ -63,7 +63,7 @@ namespace SsisBuild.Core.Tests
             Directory.Delete(_workingFolder, true);
         }
 
-        private static IEnumerable<object[]> ParameterData()
+        public static IEnumerable<object[]> ParameterData()
         {
             var rnd = new Random(DateTime.Now.Millisecond);
             var testsCount = rnd.Next(10, 40);

@@ -87,8 +87,6 @@ namespace SsisBuild.Core.Tests
             var projectPassword = Fakes.RandomString();
             var eraseSensitiveInfo = Fakes.RandomBool();
 
-            IDeployArguments deployArguments = null;
-
             _deployerMock.Setup(d => d.Deploy(It.IsAny<IDeployArguments>())).Throws(new Exception("TEST"));
 
             // Execute
